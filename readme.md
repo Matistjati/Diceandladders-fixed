@@ -1,0 +1,5 @@
+# Dice and ladders fix
+The test data for the kattis problem https://open.kattis.com/problems/diceandladders is currently broken. <br/>
+The judge solution (found here https://contest.ii.uib.no/bgopen/2018/) only uses double precision, which is insufficient to calculate the correct answer for testcases "hard_06.in" and "hard_05.in". <br/>
+This repository contains a proposed fix. A solution was written using python and 100 digits of precision using the decimal module. The precision of the judge solution was increased by using long double instead of double. When compiled with g++, the output of these two programs match on all testcases, meaning that we can be reasonably confident that this test data is correct. <br/>
+It is preferable to NOT rejudge old submissions when updating the test data, as this lead to all old submissions getting wrong answer. 
